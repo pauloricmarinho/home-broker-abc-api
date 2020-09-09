@@ -13,9 +13,9 @@ import br.edu.infnet.home.broker.abc.model.vo.PlanilhaVo;
 @Service
 public class PlanilhaService {
 
-	public List<PlanilhaVo> carregarArquivo() {
+	public List<PlanilhaVo> carregarArquivo() {		
 		
-		String csvFile = "src/main/resources/MGLU3.SA.csv";
+		String csvFile = "./MGLU3.SA.csv";
 		String line = "";
 		String cvsSplitBy = ",";
 		
