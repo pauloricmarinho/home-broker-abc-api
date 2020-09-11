@@ -23,7 +23,7 @@ public class HomeBrokerService {
 	private PlanilhaService service;
 	
 	@ResponseBody
-	@CrossOrigin(origins = "http://localhost:4200")
+	@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:9080"})
 	@GetMapping(value="/valores-formatados", produces="application/json")
 	public ResponseEntity<List<PlanilhaDTO>> service() {
 		List<PlanilhaDTO> listaDTO = ReaderUtils.formatarSaida(service.carregarArquivo()); 
@@ -31,7 +31,7 @@ public class HomeBrokerService {
 	}
 	
 	@ResponseBody
-	@CrossOrigin(origins = "http://localhost:9080")
+	@CrossOrigin(origins = {"http://localhost:4200", "http://localhost:9080"})
 	@GetMapping(value="/valores", produces="application/json")
 	public ResponseEntity<List<PlanilhaVo>> serviceEma() {		
 		return ResponseEntity.ok(service.carregarArquivo());
